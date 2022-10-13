@@ -27,3 +27,14 @@ class SubChapter:
 
     def printSubChapter(self):
         print(f"""Subchapter: {self.__name}""")
+        for paragraph in self.__paragraphs:
+            print(f"Paragraph: ", end='')
+            paragraph.printParagraph()
+
+        for image in self.__images:
+            print(f"Image with name: ", end='')
+            image.printImage()
+
+        for table in self.__tables:
+            print(f"Table with Title: ", end='')
+            table.printTable()

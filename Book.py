@@ -18,18 +18,3 @@ class Book:
 
     def getChapter(self, idx):
         return self.__chapters[idx]
-
-    """def createNewParagraph(self,paragraph):
-        self.paragraphs.append(paragraph)
-        self.contents+=paragraph+'\n'
-
-    def createNewImage(self,image):
-        self.images.append(image)
-        self.contents+=image+'\n'
-
-    def createNewTable(self,table):
-        self.tables.append(table)
-        self.contents+=table+'\n'
-
-    def printBook(self):
-        print(self.contents)"""

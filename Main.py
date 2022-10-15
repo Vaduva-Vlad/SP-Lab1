@@ -19,7 +19,7 @@ def main():
     scOneOne.createNewTable("Table 1")
     scOneOne.createNewParagraph("Paragraph 5")
 
-    scOneOne.printSubChapter()
+    scOneOne.print()
 
 if __name__=='__main__':
     main()

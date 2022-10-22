@@ -1,20 +1,25 @@
 from Author import Author
-from Chapter import Chapter
+from Element import Element
 
 
 class Book:
     def __init__(self, title):
         self.__title: str = title
-        self.__author: Author
-        self.__chapters: list[Chapter] = []
+        self.__authors: list[Author] = []
+        self.__elements: list[Element] = []
 
     def addAuthor(self, author: Author):
-        self.__author = author
+        self.__authors.append(author)
 
-    def createChapter(self, name):
-        chapter = Chapter(name)
-        self.__chapters.append(chapter)
-        return len(self.__chapters) - 1
+    def addContent(self, content):
+        self.__elements.append(content)
 
-    def getChapter(self, idx):
-        return self.__chapters[idx]
+    def print(self):
+        print(f"Book: {self.__title}\n")
+        print("Authors:")
+        for author in self.__authors:
+            author.print()
+        print("")
+
+        for element in self.__elements:
+            element.print()

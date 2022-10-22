@@ -2,5 +2,5 @@ class Author:
     def __init__(self, name):
         self.name: str = name
 
-    def printAuthor(self):
-        print(self.name)
+    def print(self):
+        print(f"Author: {self.name}")

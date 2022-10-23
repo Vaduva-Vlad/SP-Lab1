@@ -1,18 +1,20 @@
 from Element import Element
+from io import BytesIO
 
 
 class Image(Element):
     def __init__(self, imageName):
-        self.imageName: str = imageName
+        self.__imageName: str = imageName
+        self.__bytes=None
 
-    def add(self):
-        pass
+    def add(self,content):
+        self.__bytes=content
 
-    def remove(self):
-        pass
+    def remove(self,content=None):
+        self.__bytes=None
 
-    def get(self):
-        pass
+    def get(self,content=None):
+        return self.__bytes
 
     def print(self):
-        print(f"Image with name: {self.imageName}")
+        print(f"Image with name: {self.__imageName}")

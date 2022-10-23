@@ -7,13 +7,13 @@ class Element(ABC):
         pass
 
     @abstractmethod
-    def add(self):
+    def add(self,content):
         pass
 
     @abstractmethod
-    def remove(self):
+    def remove(self,content):
         pass
 
     @abstractmethod
-    def get(self):
+    def get(self,content):
         pass

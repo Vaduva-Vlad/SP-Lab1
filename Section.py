@@ -1,21 +1,23 @@
 from Element import Element
-
+import copy
 
 class Section(Element):
     def __init__(self, title: str):
-        self.__title: str = title
-        self.__children: list[Element] = []
+        self._title: str = title
+        self._children: list[Element] = []
 
     def add(self,content):
-        self.__children.append(content)
+        new_content=copy.deepcopy(content)
+        self._children.append(new_content)
+        return new_content
 
     def remove(self,idx):
-        self.__children.pop(idx)
+        self._children.pop(idx)
 
     def get(self,idx):
-        return self.__children[idx]
+        return self._children[idx]
 
     def print(self):
-        print(self.__title)
-        for child in self.__children:
+        print(self._title)
+        for child in self._children:
             child.print()

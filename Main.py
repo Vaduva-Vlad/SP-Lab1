@@ -3,29 +3,35 @@ from Author import Author
 from Section import Section
 from Paragraph import Paragraph
 from Image import Image
+import time
 
 
 def main():
-    noapteBuna = Book('Noapte buna, copii!')
-    rpGheo = Author("Radu Pavel Gheo")
-    noapteBuna.addAuthor(rpGheo)
+    t=time.time()
+    startTime=int(t*1000)
+    img1=Image('Pamela Anderson')
+    img2=Image('Kim Kardashian')
+    img3=Image('Kirby Griffin')
+    playboys1=Section('Front Cover')
+    playboys1.add(img1)
+    playboys2=Section('Summer Girls')
+    playboys2.add(img2)
+    playboys2.add(img3)
 
-    cap1 = Section("Capitolul 1")
-    cap11 = Section("Capitolul 1.1")
-    cap111 = Section("Capitolul 1.1.1")
-    cap1111 = Section("Capitolul 1.1.1.1")
-    noapteBuna.addContent(Paragraph("Multumesc celor care..."))
-    cap1=noapteBuna.addContent(cap1)
-    cap1.add(Paragraph("Moto capitol"))
-    cap11=cap1.add(cap11)
-    cap11.add(Paragraph("Text from subchapter 1.1"))
-    cap111=cap11.add(cap111)
-    cap111.add(Paragraph("Text from subchapter 1.1.1"))
-    cap1111=cap111.add(cap1111)
-    cap1111.add(Image("Image subchapter 1.1.1.1"))
+    playboy=Book('Playboy')
+    playboy.addContent(playboys1)
+    playboy.addContent(playboys2)
 
-    noapteBuna.print()
+    endTime=int(time.time()*1000)
+    print(f'Creation of the content book: {endTime-startTime} milliseconds')
 
+    startTime=int(time.time()*1000)
+    playboys1.print()
+    endTime=int(time.time()*1000)
+    print(f'Printing of the section 1 took: {endTime-startTime} milliseconds')
+
+    startTime=int(time.time()*1000)
+    print(f'Printing again the section 1 took {endTime-startTime} milliseconds')
 
 if __name__ == '__main__':
     main()

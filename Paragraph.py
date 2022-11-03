@@ -4,6 +4,7 @@ from Element import Element
 class Paragraph(Element):
     def __init__(self, text):
         self.__text: str = text
+        self.textAlignment=None
 
     def add(self, text):
         self.__text += text
@@ -16,5 +17,11 @@ class Paragraph(Element):
     def get(self, idx):
         return self.__text[idx:]
 
+    def setAlignStrategy(self,strategy):
+        self.textAlignment=strategy
+
     def print(self):
-        print(f"Paragraph: {self.__text}")
+        if self.textAlignment is not None:
+            print(f"Paragraph: {self.textAlignment.render(self.__text)}")
+        else:
+            print(self.__text)

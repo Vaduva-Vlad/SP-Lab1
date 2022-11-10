@@ -17,3 +17,7 @@ class Element(ABC):
     @abstractmethod
     def get(self,content):
         pass
+
+    @abstractmethod
+    def accept(self,visitor):
+        pass

@@ -1,11 +1,8 @@
-from Book import Book
-from Section import Section
-from ImageProxy import ImageProxy
-import time
-from Paragraph import Paragraph
-from AlignLeft import AlignLeft
-from AlignRight import AlignRight
-from AlignCenter import AlignCenter
+from models.Section import Section
+from models.Paragraph import Paragraph
+from services.AlignLeft import AlignLeft
+from services.AlignRight import AlignRight
+from services.AlignCenter import AlignCenter
 
 
 def main():

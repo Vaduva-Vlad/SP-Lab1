@@ -25,3 +25,6 @@ class Paragraph(Element):
             print(f"Paragraph: {self.textAlignment.render(self.__text)}")
         else:
             print(self.__text)
+
+    def accept(self,visitor):
+        visitor.visitParagraph(self)

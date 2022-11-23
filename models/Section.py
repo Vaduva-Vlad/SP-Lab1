@@ -1,7 +1,8 @@
-from Element import Element
+from models.Element import Element
+from models.Visitee import Visitee
 import copy
 
-class Section(Element):
+class Section(Element,Visitee):
     def __init__(self, title: str):
         self._title: str = title
         self._children: list[Element] = []
@@ -21,3 +22,6 @@ class Section(Element):
         print(self._title)
         for child in self._children:
             child.print()
+
+    def accept(self,visitor):
+        visitor.visitSection(self)

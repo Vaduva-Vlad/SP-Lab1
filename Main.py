@@ -1,5 +1,10 @@
+from models.ImageProxy import ImageProxy
 from models.Section import Section
 from models.Paragraph import Paragraph
+from models.Image import Image
+from models.Table import Table
+from models.RenderContentVisitor import RenderContentVisitor
+
 from services.AlignLeft import AlignLeft
 from services.AlignRight import AlignRight
 from services.AlignCenter import AlignCenter
@@ -16,16 +21,14 @@ def main():
     p4 = Paragraph("Paragraph 4")
     cap1.add(p4)
 
-    print("Printing without alignment\n")
-    cap1.print()
+    cap1.add(ImageProxy("ImageOne"))
+    cap1.add(Image("ImageTwo",0))
+    cap1.add(Paragraph("Some text"))
+    cap1.add(Table("Table 1"))
 
-    cap1.get(0).setAlignStrategy(AlignCenter())
-    cap1.get(1).setAlignStrategy(AlignRight())
-    cap1.get(3).setAlignStrategy(AlignLeft())
-
-    print("Printing with alignment\n")
-
-    cap1.print()
+    stats=RenderContentVisitor()
+    cap1.accept(stats)
+    stats.printStats()
 
 
 if __name__ == '__main__':

@@ -10,7 +10,8 @@ class RenderContentVisitor(Visitor):
         pass
 
     def visitSection(self, section):
-        pass
+        for element in section._children:
+            element.accept(self)
 
     def visitTableOfContents(self, tableofcontents):
         pass
@@ -23,3 +24,8 @@ class RenderContentVisitor(Visitor):
 
     def visitTable(self, table):
         self.visitedTables+=1
+
+    def printStats(self):
+        print("*** Number of images: "+str(self.visitedImages))
+        print("*** Number of tables: "+str(self.visitedTables))
+        print("*** Number of paragraphs: "+str(self.visitedParagraphs))

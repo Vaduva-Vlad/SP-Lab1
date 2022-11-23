@@ -1,11 +1,12 @@
-from Element import Element
-from Picture import Picture
+from models.Element import Element
+from models.Picture import Picture
+from models.Visitee import Visitee
 from io import BytesIO
 from services.ImageLoaderFactory import ImageLoaderFactory
 import time
 
 
-class Image(Element, Picture):
+class Image(Element, Picture,Visitee):
     def __init__(self, url, dim):
         self.__url = url
         self.__dim = dim
@@ -36,3 +37,6 @@ class Image(Element, Picture):
 
     def print(self):
         print(f"Image with url: {self.__url}")
+
+    def accept(self,visitor):
+        visitor.visitImage(self)

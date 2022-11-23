@@ -1,4 +1,4 @@
-from AlignStrategy import AlignStrategy
+from services.AlignStrategy import AlignStrategy
 
 class AlignRight(AlignStrategy):
     def render(self,paragraph):

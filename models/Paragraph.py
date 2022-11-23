@@ -1,10 +1,11 @@
-from Element import Element
+from models.Element import Element
+from models.Visitee import Visitee
 
 
-class Paragraph(Element):
+class Paragraph(Element, Visitee):
     def __init__(self, text):
         self.__text: str = text
-        self.textAlignment=None
+        self.textAlignment = None
 
     def add(self, text):
         self.__text += text
@@ -17,8 +18,8 @@ class Paragraph(Element):
     def get(self, idx):
         return self.__text[idx:]
 
-    def setAlignStrategy(self,strategy):
-        self.textAlignment=strategy
+    def setAlignStrategy(self, strategy):
+        self.textAlignment = strategy
 
     def print(self):
         if self.textAlignment is not None:
@@ -26,5 +27,5 @@ class Paragraph(Element):
         else:
             print(self.__text)
 
-    def accept(self,visitor):
+    def accept(self, visitor):
         visitor.visitParagraph(self)

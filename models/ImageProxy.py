@@ -1,6 +1,6 @@
-from Element import Element
-from Image import Image
-from Picture import Picture
+from models.Element import Element
+from models.Image import Image
+from models.Picture import Picture
 
 
 class ImageProxy(Element, Picture):
@@ -37,3 +37,6 @@ class ImageProxy(Element, Picture):
     def print(self):
         self.loadImage()
         self.__realImage.print()
+
+    def accept(self,visitor):
+        visitor.visitImage(self.__realImage)

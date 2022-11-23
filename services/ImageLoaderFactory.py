@@ -1,5 +1,5 @@
-from JPGImageLoader import JPGImageLoader
-from BMPImageLoader import BMPImageLoader
+from services.JPGImageLoader import JPGImageLoader
+from services.BMPImageLoader import BMPImageLoader
 
 
 class ImageLoaderFactory:

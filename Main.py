@@ -4,6 +4,7 @@ from models.Paragraph import Paragraph
 from models.Image import Image
 from models.Table import Table
 from models.RenderContentVisitor import RenderContentVisitor
+from models.DocumentManager import DocumentManager
 
 from services.AlignLeft import AlignLeft
 from services.AlignRight import AlignRight
